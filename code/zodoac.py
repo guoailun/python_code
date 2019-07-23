@@ -51,5 +51,7 @@ tuple1 = ('x', 'y', 3, 4, 5)
 tuple2 = ('a', 'b', 'c')
 # print(tuple1 + tuple2)
 
-print(len(tuple1))
-print(tuple1.__len__())
+# print(len(tuple1))
+# print(tuple1.__len__())
+
+print(('a', 'ca') < ('a', 'c'))
