@@ -61,14 +61,41 @@ list_a = [[1, 2], 2, 3]
 
 
 # 使用for语句输出1-100之间的所有偶数
-for num in range(1, 100):
-    if num % 2 == 0:
-        print(num)
+# for num in range(1, 100):
+#     if num % 2 == 0:
+#         print(num)
 
 
 # 使用while语句输出1-100之间能够被3整除的数字
-a = 0
-while a < 100:
-    if a % 3 == 0:
-        print(a)
-    a = a + 1
+# a = 0
+# while a < 100:
+#     if a % 3 == 0:
+#         print(a)
+#     a = a + 1
+
+
+
+# 使用for循环和if条件语句的嵌套来，根据用户输入的月份和日期来判断星座
+# 存储星座的信息
+zodiac_name = (
+    u'摩羯座', u'水平座', u'双鱼座', u'白羊座', u'金牛座', u'双子座',
+    u'巨蟹座', u'狮子座', u'处女座', u'天秤座', u'天蝎座', u'射手座'
+)
+
+# 存储星座的开始时间和结束时间 (月份加日期)
+zodiac_days = (
+    (1, 20), (2, 19), (3, 21), (4, 21), (5, 21), (6, 22),
+    (7, 23), (8, 23), (9, 23), (10, 23), (11, 23), (12, 23)
+)
+
+input_month = int(input("请输入月份: "))
+input_day = int(input("请输入日期: "))
+
+for index in range(len(zodiac_days)):
+    if zodiac_days[index] >= (input_month, input_day):
+        print(zodiac_name[index])
+        break
+    elif input_month == 12 and input_day > 23:
+        print(zodiac_name[0])
+        break
+
