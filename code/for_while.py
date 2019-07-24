@@ -75,7 +75,6 @@ list_a = [[1, 2], 2, 3]
 
 
 
-# 使用for循环和if条件语句的嵌套来，根据用户输入的月份和日期来判断星座
 # 存储星座的信息
 zodiac_name = (
     u'摩羯座', u'水平座', u'双鱼座', u'白羊座', u'金牛座', u'双子座',
@@ -91,11 +90,22 @@ zodiac_days = (
 input_month = int(input("请输入月份: "))
 input_day = int(input("请输入日期: "))
 
-for index in range(len(zodiac_days)):
-    if zodiac_days[index] >= (input_month, input_day):
-        print(zodiac_name[index])
+# 使用for循环和if条件语句的嵌套来，根据用户输入的月份和日期来判断星座
+# for index in range(len(zodiac_days)):
+#     if zodiac_days[index] >= (input_month, input_day):
+#         print(zodiac_name[index])
+#         break
+#     elif input_month == 12 and input_day > 23:
+#         print(zodiac_name[0])
+#         break
+
+# 使用while循环和if条件语句的嵌套来，根据用户输入的月份和日期来判断星座
+index_num = 0
+
+while zodiac_days[index_num] < (input_month, input_day):
+    if input_month == 12 and input_day > 23:  # 增加判断，防止index溢出
         break
-    elif input_month == 12 and input_day > 23:
-        print(zodiac_name[0])
-        break
+    index_num += 1
+print(zodiac_name[index_num])
+
 
