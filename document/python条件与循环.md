@@ -10,7 +10,7 @@
 退出提示
 input("点击 enter 键退出")
 
-# learn-python python while和for循环 循环终止语句 break和continue 与js的定义相同
+# learn-python python while和for循环 循环终止语句 break和continue 与js的定义相同 break 语句和 C 中的类似，用于跳出最近的一级 for 或 while 循环。
 1、while 表达式: 代码块
 2、for循环：语法
     for 迭代变量 in 可迭代对象: 代码块
