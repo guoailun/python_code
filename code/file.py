@@ -28,7 +28,7 @@
 
 
 # 读取文件的指针问题
-file6 = open('name.text')
+file6 = open('sanguo_name.text')
 # print(file6.tell())  # 获取读取当前文件的指针
 file6.read(1)   # 读取一个字符
 # print(file6.tell())
@@ -38,5 +38,13 @@ print(file6.tell())  # 获取读取当前文件的指针
 file6.read(1)   # 读取一个字符
 print(file6.tell())
  
+
+# file7 = open('sanguo_wuqi.text', 'w')
+# file7.write('刀')
+# file7.close()
+
+# file7 = open('sanguo_quan.text', 'w')
+# file7.write('三国演义')
+# file7.close()
 
 
