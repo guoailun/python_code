@@ -20,6 +20,9 @@ def howlong1(first, *other):
     print(1 + len(other))
 
 # howlong1(1,[1,2,3])
+# howlong1(1,[2])
+# howlong1(1)
+# howlong1(1, 2)
 
 
 def howlong2(*other):
@@ -33,14 +36,13 @@ var1 = 123
 
 
 def fun():
-    # var1 = 456
-    global var1
-    var1 = 456
-    # print(var1)
+    # global var1
+    var1 = 456  # 此处若不用global生命变量，则在该变量的修改只影响在函数内部的值，外部依旧是未修改的
+    print(var1)
 
 
 fun()
-# print(var1)
+print(var1)
 
 
 def outer():
@@ -48,15 +50,17 @@ def outer():
 
     def inner():
         # nonlocal num   # nonlocal关键字声明
-        global num   # nonlocal关键字声明
+        global num   # global关键字声明
         num = 100
-        # print('inner %d' %num)
+        print('inner %d' % num)
     inner()
 
-    # print('outer %d' %num)
+    print('outer %d' % num)
+
+
 outer()
 
-# print('global %d' %num)
+print('global %d' % num)
 
 
 # 对待器对象 迭代器方法 iter() next()
@@ -72,6 +76,7 @@ it = iter(list)
 
 
 def float_range(start, end, step):
+    """asfsfs"""
     x = start
     while x < end:
         yield x
@@ -95,6 +100,16 @@ def add(x, y):
 
 # add 函数转化成 lambda表达式如下
 # lambda x,y: return x + y
+
+# lambda 写法
+add2 = lambda x,y : x+y
+print(add2(5,6))
+
+# lambda 写法
+def add2(x, y): return x+y
+
+
+print(add2(5, 6))
 
 
 def var(x, y): return x + y
@@ -222,7 +237,7 @@ def count_time():
     time.sleep(3)
 
 
-count_time()
+# count_time()
 
 # timmer 函数装饰器执行的过程
 # 以上代码，看似闭包的结构 与闭包的区别在于，闭包传进来的是变量，闭包内部函数引用的也是变量，
@@ -248,12 +263,13 @@ def tips(func):
 def add2(a, b):
     print(a + b)
 
-add2(1, 2)
+# add2(1, 2)
+
 
 @tips
 def sub(a, b):
     print(a - b)
 
-sub(1, 2)
+# sub(1, 2)
 
 # 上诉只是向装饰器的内部函数传递参数，如果装饰器本身能传递参数该有多好
